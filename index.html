@@ -1,0 +1,265 @@
+<!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Define el idioma del contenido como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Especifica la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsive -->
+    <title>Proyecto Integrador Plantel 07 Buenvista</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    <style>
+        /* Estilos generales del cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Fuente predeterminada */
+            margin: 0; /* Elimina el margen predeterminado */
+            padding: 0; /* Elimina el padding predeterminado */
+            background-color: #0000FF; /* Color de fondo de la página */
+            display: flex; /* Usa flexbox para el diseño */
+            flex-direction: column; /* Organiza los elementos en columna */
+            align-items: center; /* Centra los elementos horizontalmente */
+        }
+        /* Estilos para el encabezado */
+        header {
+            background-color: #FF0500; /* Color de fondo del encabezado */
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto */
+            padding: 15px; /* Espaciado interno */
+            position: relative; /* Posicionamiento relativo para elementos hijos */
+            width: 100%; /* Ancho completo */
+        }
+        /* Estilos para la imagen del encabezado */
+        header img {
+            width: 100px; /* Ancho de la imagen */
+            position: absolute; /* Posicionamiento absoluto */
+            top: 10px; /* Distancia desde la parte superior */
+            left: 10px; /* Distancia desde la izquierda */
+        }
+        /* Estilos para los párrafos */
+        p {
+            text-align: center; /* Centra el texto */
+            text-size-adjust: 10px; /* Ajusta el tamaño del texto */
+        }
+        /* Estilos para el contenedor principal */
+        .container {
+            width: 80%; /* Ancho del contenedor */
+            margin: 20px auto; /* Centra el contenedor horizontalmente */
+            background: white; /* Color de fondo */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+            display: flex; /* Usa flexbox para el diseño */
+            justify-content: space-between; /* Espacio entre elementos */
+        }
+        /* Estilos para el contenido principal */
+        .main-content {
+            width: 70%; /* Ancho del contenido principal */
+        }
+        /* Estilos para la barra lateral (aside) */
+        aside {
+            width: 25%; /* Ancho del aside */
+            background-color: #C9BDF2; /* Color de fondo */
+            padding: 15px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            text-align: left; /* Alineación del texto a la izquierda */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+        /* Estilos para los párrafos dentro del aside */
+        aside p {
+            text-align: left; /* Alineación del texto a la izquierda */
+        }
+        /* Estilos para los encabezados h2 */
+        h2 {
+            color: #F8EDA0; /* Color del texto */
+        }
+        /* Estilos para las tablas */
+        table {
+            width: 100%; /* Ancho completo */
+            border-collapse: collapse; /* Colapsa los bordes de la tabla */
+            margin-top: 20px; /* Margen superior */
+        }
+        /* Estilos para las celdas de la tabla */
+        table, th, td {
+            border: 1px solid #ddd; /* Borde de las celdas */
+            text-align: center; /* Centra el texto */
+        }
+        /* Estilos para las celdas de encabezado y datos */
+        th, td {
+            padding: 10px; /* Espaciado interno */
+        }
+        /* Estilos para las celdas de encabezado */
+        th {
+            background-color: #28a745; /* Color de fondo */
+            color: white; /* Color del texto */
+        }
+        /* Estilos para el contenedor de imágenes */
+        .image-container {
+            text-align: center; /* Centra el contenido */
+            margin-top: 20px; /* Margen superior */
+        }
+        /* Estilos para las imágenes dentro del contenedor */
+        .image-container img {
+            width: 200px; /* Ancho de la imagen */
+            margin: 10px; /* Margen alrededor de la imagen */
+        }
+        /* Estilos para el contenedor de video */
+        .video-container {
+            text-align: center; /* Centra el contenido */
+            margin-top: 20px; /* Margen superior */
+        }
+        /* Estilos para el iframe de video */
+        .video-container iframe {
+            width: 100%; /* Ancho completo */
+            max-width: 560px; /* Ancho máximo */
+            height: 315px; /* Altura del video */
+        }
+        /* Estilos para el menú de navegación */
+        nav {
+            background-color: #333; /* Color de fondo */
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            width: 100%; /* Ancho completo */
+        }
+        /* Estilos para la lista no ordenada dentro del nav */
+        nav ul {
+            list-style-type: none; /* Elimina los estilos de lista */
+            margin: 0; /* Elimina el margen predeterminado */
+            padding: 0; /* Elimina el padding predeterminado */
+            display: flex; /* Usa flexbox para el diseño */
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+        /* Estilos para los elementos de la lista */
+        nav ul li {
+            margin: 0; /* Elimina el margen predeterminado */
+        }
+        /* Estilos para los enlaces dentro del menú */
+        nav ul li a {
+            display: block; /* Hace que los enlaces sean bloques */
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto */
+            padding: 14px 20px; /* Espaciado interno */
+            text-decoration: none; /* Elimina el subrayado */
+        }
+        /* Estilos para los enlaces al pasar el cursor */
+        nav ul li a:hover {
+            background-color: #28a745; /* Cambia el color de fondo */
+            color: white; /* Cambia el color del texto */
+        }
+        /* Estilos para el footer */
+        footer {
+            background-color: #333; /* Color de fondo */
+            color: white; /* Color del texto */
+            text-align: center; /* Centra el texto */
+            padding: 10px; /* Espaciado interno */
+            width: 100%; /* Ancho completo */
+            margin-top: 20px; /* Margen superior */
+        }
+        /* Estilos para los párrafos dentro del footer */
+        footer p {
+            margin: 0; /* Elimina el margen predeterminado */
+            font-size: 14px; /* Tamaño de la fuente */
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <img src="logo1.jpg" alt="Cobat 07"> <!-- Imagen del logo -->
+        <h1>Hábitos Alimenticios en la Comunidad Estudiantil</h1> <!-- Título principal -->
+        <p>Plantel 07 Buenavista</p> <!-- Subtítulo -->
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#importancia">Importancia</a></li> <!-- Enlace a la sección de importancia -->
+            <li><a href="#consejos">Consejos</a></li> <!-- Enlace a la sección de consejos -->
+            <li><a href="#alimentos">Alimentos Recomendados</a></li> <!-- Enlace a la sección de alimentos -->
+            <li><a href="#video">Video</a></li> <!-- Enlace a la sección de video -->
+        </ul>
+    </nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <h2 id="importancia">Importancia de una Alimentación Saludable</h2> <!-- Título de la sección -->
+            <p>Una alimentación equilibrada es clave para un buen rendimiento académico y bienestar físico. Consumir frutas, verduras, proteínas y mantenerse hidratado es esencial para los estudiantes de bachillerato.</p> <!-- Párrafo -->
+            
+            <!-- Contenedor de imagen -->
+            <div class="image-container">
+                <img src="ic2.jpg" alt="Imagen 2"> <!-- Imagen -->
+            </div>
+            
+            <h2 id="consejos">Consejos para una Buena Alimentación</h2> <!-- Título de la sección -->
+            <ul>
+                <li>Incluir frutas y verduras en cada comida.</li> <!-- Elemento de lista -->
+                <li>Evitar el consumo excesivo de azúcares y comida chatarra.</li> <!-- Elemento de lista -->
+                <li>Beber suficiente agua durante el día.</li> <!-- Elemento de lista -->
+                <li>No saltarse el desayuno.</li> <!-- Elemento de lista -->
+                <li>Consumir proteínas saludables como pollo, pescado y legumbres.</li> <!-- Elemento de lista -->
+            </ul>
+            
+            <h2 id="alimentos">Alimentos Recomendados</h2> <!-- Título de la sección -->
+            <table>
+                <tr>
+                    <th>Grupo</th> <!-- Encabezado de columna -->
+                    <th>Ejemplos</th> <!-- Encabezado de columna -->
+                </tr>
+                <tr>
+                    <td>Frutas</td> <!-- Celda de datos -->
+                    <td>Manzana, plátano, naranja</td> <!-- Celda de datos -->
+                </tr>
+                <tr>
+                    <td>Verduras</td> <!-- Celda de datos -->
+                    <td>Zanahoria, espinaca, brócoli</td> <!-- Celda de datos -->
+                </tr>
+                <tr>
+                    <td>Proteínas</td> <!-- Celda de datos -->
+                    <td>Pollo, pescado, lentejas</td> <!-- Celda de datos -->
+                </tr>
+                <tr>
+                    <td>Lácteos</td> <!-- Celda de datos -->
+                    <td>Leche, yogur, queso</td> <!-- Celda de datos -->
+                </tr>
+            </table>
+
+            <!-- Sección del video de YouTube -->
+            <div class="video-container" id="video">
+                <h2>Video sobre Alimentación Saludable</h2> <!-- Título de la sección -->
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/ERSZmGBSGec?si=l7PgnH14cxC3Q7MO" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe> <!-- Video de YouTube -->
+            </div>
+        </div>
+
+        <!-- Aside (barra lateral) -->
+        <aside>
+            <h3>Recursos Adicionales</h3> <!-- Título de la sección -->
+            <ul>
+                <li><a href="https://www.who.int/es" target="_blank">Organización Mundial de la Salud</a></li> <!-- Enlace -->
+                <li><a href="https://www.fao.org/home/es/" target="_blank">FAO - Alimentación y Agricultura</a></li> <!-- Enlace -->
+                <li><a href="https://www.nutricion.org/" target="_blank">Sociedad Española de Nutrición</a></li> <!-- Enlace -->
+            </ul>
+            <h3>Datos Curiosos</h3> <!-- Título de la sección -->
+            <p>¿Sabías que el brócoli es una de las verduras más nutritivas? Contiene vitaminas C, K y fibra.</p> <!-- Párrafo -->
+            <p>El agua es esencial para mantener el equilibrio corporal y mejorar la concentración.</p><br> <!-- Párrafo -->
+            <p><strong>Semillas de amapola para ayudar al estrés</strong></p> <!-- Párrafo con texto en negrita -->
+            <p>Prueba a espolvorear unas semillas de amapola sobre tu yogurt. 
+            Entre sus beneficios encontrarás que actúa como un relajante nervioso, por lo que su uso es muy recomendable en épocas
+            de estrés.</p><br> <!-- Párrafo -->
+            <p><strong>El aguacate en vez de mantequilla</strong></p> <!-- Párrafo con texto en negrita -->
+            <p>¿Sabías que el aguacate puede sustituir a la mantequilla? Utiliza poca cantidad, evitando que su color se vuelva verdoso, y podrás elaborar tus recetas de forma más saludable.</p> <br> <!-- Párrafo -->
+            <p><strong>Comer despacio para ser más feliz</strong></p> <!-- Párrafo con texto en negrita -->
+            <p>Además de evitar notar las digestiones, comer más lento te ayuda a liberarte del estrés y a no engullir la comida, ya que aprendes parar cuando no tienes más hambre. </p> <!-- Párrafo -->
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Creado por: Genesis Getzemani Samano Tellez y Erick Aguilar Hernandez  Grupo:611 Páginas Web</p> <!-- Créditos -->
+    </footer>
+</body>
+</html>
